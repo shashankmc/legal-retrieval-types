@@ -1,0 +1,42 @@
+{
+  "name": "legal-retrieval-types",
+  "version": "0.1.0",
+  "description": "Shared, dependency-free configuration contracts for BlueLab retrieval and dataset-aware forms (dataset descriptors, retrieval providers, methods and their backend dependencies, manifest + validators). No client, no requests, no credentials — safe to import from browser code.",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/shashankmc/legal-retrieval-types.git"
+  },
+  "type": "module",
+  "files": [
+    "dist",
+    "README.md",
+    "LICENSE"
+  ],
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "default": "./dist/index.js"
+    }
+  },
+  "scripts": {
+    "build": "tsc",
+    "dev": "tsc --watch",
+    "clean": "rm -rf dist",
+    "test": "npm run build && node --test test/*.test.mjs",
+    "prepublishOnly": "npm run build"
+  },
+  "keywords": [
+    "legal",
+    "retrieval",
+    "dataset",
+    "config",
+    "types",
+    "bluelab"
+  ],
+  "license": "MIT",
+  "devDependencies": {
+    "typescript": "^5.9.3"
+  }
+}
