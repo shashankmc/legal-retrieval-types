@@ -256,39 +256,51 @@ export class ProviderOperationError extends Error {
   }
 }
 
-/** Fields every adapter request carries. */
+/**
+ * Fields every adapter request carries. Discovery answers are provider-scoped,
+ * not corpus-scoped, so `database` is not required here; the requests that do
+ * need a corpus extend `ProviderDatabaseRequest`.
+ */
 export interface ProviderRequestBase {
   provider: string
+}
+
+/** A request that targets one corpus. */
+export interface ProviderDatabaseRequest extends ProviderRequestBase {
   database: string
 }
 
 export interface DiscoverSourcesRequest extends ProviderRequestBase {
+  /** Corpus to scope to, when the provider scopes sources per corpus. */
+  database?: string
   /** Country code to scope sources to, when the provider supports it. */
   country?: string
 }
 
 export interface GetFiltersRequest extends ProviderRequestBase {
+  /** Corpus to scope to, when the provider scopes filters per corpus. */
+  database?: string
   source: string
 }
 
-export interface ProviderSearchRequest extends ProviderRequestBase {
+export interface ProviderSearchRequest extends ProviderDatabaseRequest {
   /** Collected field values, keyed by `FieldDescriptor.key`. */
   params: Record<string, unknown>
   cursor?: string
 }
 
-export interface GetDocumentRequest extends ProviderRequestBase {
+export interface GetDocumentRequest extends ProviderDatabaseRequest {
   source: string
   sourceId: string
 }
 
-export interface ResolveReferenceRequest extends ProviderRequestBase {
+export interface ResolveReferenceRequest extends ProviderDatabaseRequest {
   reference: string
   hintCountry?: string
   hintType?: string
 }
 
-export interface ReportSourceIssueRequest extends ProviderRequestBase {
+export interface ReportSourceIssueRequest extends ProviderDatabaseRequest {
   source: string
   issueType: SourceIssueType
   description?: string

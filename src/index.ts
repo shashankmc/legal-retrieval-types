@@ -40,6 +40,7 @@ export type {
   ProviderFilterSet,
   ProviderOperationErrorCode,
   ProviderRequestBase,
+  ProviderDatabaseRequest,
   DiscoverSourcesRequest,
   GetFiltersRequest,
   ProviderSearchRequest,
