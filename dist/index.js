@@ -3,6 +3,8 @@
 //
 // Types + validators only: no Vue, no HTTP client, no credential. Safe to
 // import from browser code.
-export { QueryBuilderManifestValidationError, withProviderTypeDefaults, resolveQueryBuilderConfig, validateQueryBuilderManifest, resolveQueryBuilderConfigFromManifest, } from './manifest.js';
+export { FIELD_CONTROLS } from './dataset.js';
+export { PROVIDER_OPERATIONS, ProviderOperationError, isKnownProviderOperation } from './provider.js';
+export { QueryBuilderManifestValidationError, withProviderTypeDefaults, resolveQueryBuilderConfig, validateQueryBuilderManifest, resolveQueryBuilderConfigFromManifest, migrateManifestToV3, resolveLegalSearchConfig, resolveLegalSearchConfigFromManifest, } from './manifest.js';
 export { requiredDependencies, unmetDependencies, dependencyHint, methodsWithDependencies, buildDependencyScaffold, } from './dependencies.js';
 //# sourceMappingURL=index.js.map

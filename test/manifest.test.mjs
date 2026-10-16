@@ -153,7 +153,7 @@ test('throws structured manifest validation errors', () => {
   assert.throws(
     () =>
       validateQueryBuilderManifest({
-        schemaVersion: '3',
+        schemaVersion: '9',
         providerMode: 'many',
         defaultProvider: '',
         providers: [],

@@ -15,19 +15,52 @@ export type {
 
 export type {
   FieldBlockType,
+  FieldControl,
+  FieldDependency,
   FieldOption,
   FieldDescriptor,
   ResultViewRef,
   DatasetDescriptor,
 } from './dataset.js'
 
+export { FIELD_CONTROLS } from './dataset.js'
+
 export type {
+  ProviderOperation,
+  ProviderCapabilities,
+  DiscoveryOption,
+  LegalDatabaseDescriptor,
+  LegalSearchProviderDescriptor,
+  NormalizedSearchHit,
+  NormalizedSearchResult,
+  NormalizedLegalDocument,
+  ReferenceMatchType,
+  ResolvedLegalReference,
+  SourceIssueType,
+  ProviderFilterSet,
+  ProviderOperationErrorCode,
+  ProviderRequestBase,
+  DiscoverSourcesRequest,
+  GetFiltersRequest,
+  ProviderSearchRequest,
+  GetDocumentRequest,
+  ResolveReferenceRequest,
+  ReportSourceIssueRequest,
+  LegalSearchAdapter,
+} from './provider.js'
+
+export { PROVIDER_OPERATIONS, ProviderOperationError, isKnownProviderOperation } from './provider.js'
+
+export type {
+  QueryBuilderFeatures,
   QueryBuilderConfig,
   QueryBuilderManifestV1,
   QueryBuilderManifestV2,
+  QueryBuilderManifestV3,
   QueryBuilderManifest,
   ValidationIssue,
   ResolvedQueryBuilderConfig,
+  ResolvedLegalSearchConfig,
 } from './manifest.js'
 
 export {
@@ -36,6 +69,9 @@ export {
   resolveQueryBuilderConfig,
   validateQueryBuilderManifest,
   resolveQueryBuilderConfigFromManifest,
+  migrateManifestToV3,
+  resolveLegalSearchConfig,
+  resolveLegalSearchConfigFromManifest,
 } from './manifest.js'
 
 export {
