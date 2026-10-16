@@ -460,6 +460,10 @@ function validateFieldDescriptor(
     min: asOptionalNumber(value.min, `${path}.min`, issues),
     max: asOptionalNumber(value.max, `${path}.max`, issues),
     step: asOptionalNumber(value.step, `${path}.step`, issues),
+    minLength: asOptionalNumber(value.minLength, `${path}.minLength`, issues),
+    maxLength: asOptionalNumber(value.maxLength, `${path}.maxLength`, issues),
+    minItems: asOptionalNumber(value.minItems, `${path}.minItems`, issues),
+    maxItems: asOptionalNumber(value.maxItems, `${path}.maxItems`, issues),
     multiple: asOptionalBoolean(value.multiple, `${path}.multiple`, issues),
     advanced: asOptionalBoolean(value.advanced, `${path}.advanced`, issues),
     userConfigurable: asOptionalBoolean(

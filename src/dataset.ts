@@ -81,6 +81,14 @@ export interface FieldDescriptor {
   max?: number
   /** Step for `number` / `range` controls. */
   step?: number
+  /** Minimum length for a `text` / `textarea` value. */
+  minLength?: number
+  /** Maximum length for a `text` / `textarea` value. */
+  maxLength?: number
+  /** Fewest entries a multi-value field accepts. */
+  minItems?: number
+  /** Most entries a multi-value field accepts. */
+  maxItems?: number
   /** Whether a `select` collects one value or many. */
   multiple?: boolean
   /** Whether the field is tucked behind an "advanced" toggle. */
